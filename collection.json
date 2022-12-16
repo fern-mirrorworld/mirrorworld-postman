@@ -15,6 +15,26 @@
       "type": "string"
     }
   ],
+  "auth": {
+    "apikey": [
+      {
+        "key": "value",
+        "value": "{{X-API-Key}}",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "{{X-API-Key}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ],
+    "type": "apikey"
+  },
   "item": [
     {
       "name": "Marketplaces",
@@ -66,7 +86,7 @@
               },
               "response": [
                 {
-                  "name": "Successful mintNft",
+                  "name": "Success",
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
@@ -159,7 +179,7 @@
               },
               "response": [
                 {
-                  "name": "Successful mintCollection",
+                  "name": "Success",
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
@@ -258,7 +278,7 @@
               },
               "response": [
                 {
-                  "name": "Successful bindPaymentCode",
+                  "name": "Success",
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
