@@ -1,0 +1,294 @@
+{
+  "info": {
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "origin",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "X-API-Key",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "MintService",
+      "item": [
+        {
+          "name": "mintNft",
+          "request": {
+            "description": "Mint New NFT on Collection",
+            "url": {
+              "raw": "{{origin}}/v1/{network}/solana/mint/nft",
+              "host": [
+                "{{origin}}"
+              ],
+              "path": [
+                "v1",
+                "{network}",
+                "solana",
+                "mint",
+                "nft"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "network",
+                  "value": "devnet"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{X-API-Key}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"collection_mint\": \"9pd6wUcfZpPBsrQFxqEkMjfbyaqraQRsiQtD8D4wqa6W\",\n    \"name\": \"new asset\",\n    \"symbol\": \"NA\",\n    \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Successful mintNft",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Mint New NFT on Collection",
+                "url": {
+                  "raw": "{{origin}}/v1/{network}/solana/mint/nft",
+                  "host": [
+                    "{{origin}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "{network}",
+                    "solana",
+                    "mint",
+                    "nft"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "network",
+                      "value": "devnet"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "X-API-Key",
+                    "value": "{{X-API-Key}}",
+                    "type": "string"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"collection_mint\": \"9pd6wUcfZpPBsrQFxqEkMjfbyaqraQRsiQtD8D4wqa6W\",\n    \"name\": \"new asset\",\n    \"symbol\": \"NA\",\n    \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "body": "{\n    \"data\": {\n        \"mint_address\": \"FPiveD2LMFwDKPBGdEk6Ty7hf69hYbNHUuNicGUVy8PS\",\n        \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\",\n        \"update_authority\": \"FU1tDd78JKyLqDT6jRUhgLkxdnuYu1Z9nJL2QfwjtWuv\",\n        \"creator_address\": \"9x1sRqFoZTkDtYVKwuVanE7s5LSA2hERZ8FRnU37S2L8\",\n        \"name\": \"new asset\",\n        \"symbol\": \"NA\",\n        \"seller_fee_basis_points\": 200,\n        \"collection\": \"9pd6wUcfZpPBsrQFxqEkMjfbyaqraQRsiQtD8D4wqa6W\",\n        \"signature\": \"2pCTXxDhsr2Vihojv56vkvPSXLE6cosFcwxRffA9QWt5Ay574dhigFCuANuZknjCudkrQp4c7qjX2EhJFHXNLkDw\",\n        \"status\": \"started\"\n    }\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "mintCollection",
+          "request": {
+            "description": "Mint New Top-level Collection",
+            "url": {
+              "raw": "{{origin}}/v1/{network}/solana/mint/collection",
+              "host": [
+                "{{origin}}"
+              ],
+              "path": [
+                "v1",
+                "{network}",
+                "solana",
+                "mint",
+                "collection"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "network",
+                  "value": "devnet"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{X-API-Key}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"new collection\",\n    \"symbol\": \"NC\",\n    \"url\": \"https://arweave.net/pieZ91H8mr7bHGlK_jxNtVyBiLGL0yh9XrQ2oyPR3q8\",\n    \"confirmation\": \"finalized\",\n    \"seller_fee_basis_points\": 200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Successful mintCollection",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Mint New Top-level Collection",
+                "url": {
+                  "raw": "{{origin}}/v1/{network}/solana/mint/collection",
+                  "host": [
+                    "{{origin}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "{network}",
+                    "solana",
+                    "mint",
+                    "collection"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "network",
+                      "value": "devnet"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "X-API-Key",
+                    "value": "{{X-API-Key}}",
+                    "type": "string"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"new collection\",\n    \"symbol\": \"NC\",\n    \"url\": \"https://arweave.net/pieZ91H8mr7bHGlK_jxNtVyBiLGL0yh9XrQ2oyPR3q8\",\n    \"confirmation\": \"finalized\",\n    \"seller_fee_basis_points\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "body": "{\n    \"data\": {\n        \"mint_address\": \"FPiveD2LMFwDKPBGdEk6Ty7hf69hYbNHUuNicGUVy8PS\",\n        \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\",\n        \"update_authority\": \"FU1tDd78JKyLqDT6jRUhgLkxdnuYu1Z9nJL2QfwjtWuv\",\n        \"creator_address\": \"9x1sRqFoZTkDtYVKwuVanE7s5LSA2hERZ8FRnU37S2L8\",\n        \"name\": \"new asset\",\n        \"symbol\": \"NA\",\n        \"seller_fee_basis_points\": 200,\n        \"signature\": \"2pCTXxDhsr2Vihojv56vkvPSXLE6cosFcwxRffA9QWt5Ay574dhigFCuANuZknjCudkrQp4c7qjX2EhJFHXNLkDw\",\n        \"status\": \"started\"\n    }\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TransactionApprovalService",
+      "item": [
+        {
+          "name": "bindPaymentCode",
+          "request": {
+            "description": "Binds a new code for a user who previously did not have a payment code",
+            "url": {
+              "raw": "{{origin}}/v1/auth/security/bind-payment-code",
+              "host": [
+                "{{origin}}"
+              ],
+              "path": [
+                "v1",
+                "auth",
+                "security",
+                "bind-payment-code"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{X-API-Key}}",
+                "type": "string"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"security_code\": \"123456\",\n    \"confirm_security_code\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Successful bindPaymentCode",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Binds a new code for a user who previously did not have a payment code",
+                "url": {
+                  "raw": "{{origin}}/v1/auth/security/bind-payment-code",
+                  "host": [
+                    "{{origin}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "auth",
+                    "security",
+                    "bind-payment-code"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "X-API-Key",
+                    "value": "{{X-API-Key}}",
+                    "type": "string"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"security_code\": \"123456\",\n    \"confirm_security_code\": \"123456\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "body": "{\n    \"data\": {\n        \"id\": -65132526,\n        \"eth_address\": \"0x71C7656EC7ab88b098defB751B7401B5f6d8976F\",\n        \"sol_address\": \"HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH\",\n        \"email\": \"dolore consequat\",\n        \"email_verified\": true,\n        \"username\": \"et adipisic\",\n        \"wallet\": {\n            \"eth_address\": \"0x71C7656EC7ab88b098defB751B7401B5f6d8976F\",\n            \"sol_address\": \"HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH\"\n        },\n        \"createdAt\": \"2022-12-16T07:36:48Z\",\n        \"updatedAt\": \"2022-12-16T07:36:48Z\"\n    }\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
