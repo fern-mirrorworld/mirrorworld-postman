@@ -43,6 +43,97 @@
           "name": "Mint",
           "item": [
             {
+              "name": "Test Endpoint",
+              "request": {
+                "description": "This is a test endpoint",
+                "url": {
+                  "raw": "{{baseUrl}}/v1/{network}/solana/test",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "{network}",
+                    "solana",
+                    "test"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "network",
+                      "value": "devnet"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "X-API-Key",
+                    "value": "{{X-API-Key}}",
+                    "type": "string"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"myParameter\": \"hello world\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "description": "This is a test endpoint",
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/{network}/solana/test",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "{network}",
+                        "solana",
+                        "test"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "network",
+                          "value": "devnet"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "X-API-Key",
+                        "value": "{{X-API-Key}}",
+                        "type": "string"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"myParameter\": \"hello world\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
               "name": "Mint New NFT",
               "request": {
                 "description": "Mint New NFT on Collection",
