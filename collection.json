@@ -10,78 +10,46 @@
       "type": "string"
     },
     {
-      "key": "X-API-Key",
+      "key": "token",
       "value": "",
       "type": "string"
     }
   ],
   "auth": {
-    "apikey": [
+    "bearer": [
       {
-        "key": "value",
-        "value": "{{X-API-Key}}",
-        "type": "string"
-      },
-      {
-        "key": "key",
-        "value": "{{X-API-Key}}",
-        "type": "string"
-      },
-      {
-        "key": "in",
-        "value": "header",
+        "key": "token",
+        "value": "{{token}}",
         "type": "string"
       }
     ],
-    "type": "apikey"
+    "type": "bearer"
   },
   "item": [
     {
-      "name": "Marketplaces",
+      "name": "Authentication",
       "item": [
         {
-          "name": "Mint",
+          "name": "Api Key",
           "item": [
             {
-              "name": "Test Endpoint",
+              "name": "Generate a new api key",
               "request": {
-                "description": "This is a test endpoint",
                 "url": {
-                  "raw": "{{baseUrl}}/v1/{network}/solana/test",
+                  "raw": "{{baseUrl}}/auth/api-key/generate",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "v1",
-                    "{network}",
-                    "solana",
-                    "test"
+                    "auth",
+                    "api-key",
+                    "generate"
                   ],
                   "query": [],
-                  "variable": [
-                    {
-                      "key": "network",
-                      "value": "devnet"
-                    }
-                  ]
+                  "variable": []
                 },
-                "header": [
-                  {
-                    "key": "X-API-Key",
-                    "value": "{{X-API-Key}}",
-                    "type": "string"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"myParameter\": \"hello world\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
+                "header": [],
+                "method": "GET"
               },
               "response": [
                 {
@@ -89,85 +57,49 @@
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
-                    "description": "This is a test endpoint",
                     "url": {
-                      "raw": "{{baseUrl}}/v1/{network}/solana/test",
+                      "raw": "{{baseUrl}}/auth/api-key/generate",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "v1",
-                        "{network}",
-                        "solana",
-                        "test"
+                        "auth",
+                        "api-key",
+                        "generate"
                       ],
                       "query": [],
-                      "variable": [
-                        {
-                          "key": "network",
-                          "value": "devnet"
-                        }
-                      ]
+                      "variable": []
                     },
-                    "header": [
-                      {
-                        "key": "X-API-Key",
-                        "value": "{{X-API-Key}}",
-                        "type": "string"
-                      }
-                    ],
-                    "method": "POST",
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"myParameter\": \"hello world\"\n}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    }
+                    "header": [],
+                    "method": "GET"
                   },
-                  "body": "",
+                  "body": "{\n    \"api_key\": \"abcdefghijklmno\",\n    \"status\": \"success\"\n}",
                   "_postman_previewlanguage": "json"
                 }
               ],
               "_type": "endpoint"
             },
             {
-              "name": "Mint New NFT",
+              "name": "Destroy existing Api Key",
               "request": {
-                "description": "Mint New NFT on Collection",
                 "url": {
-                  "raw": "{{baseUrl}}/v1/{network}/solana/mint/nft",
+                  "raw": "{{baseUrl}}/auth/api-key/destroy",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "v1",
-                    "{network}",
-                    "solana",
-                    "mint",
-                    "nft"
+                    "auth",
+                    "api-key",
+                    "destroy"
                   ],
                   "query": [],
-                  "variable": [
-                    {
-                      "key": "network",
-                      "value": "devnet"
-                    }
-                  ]
+                  "variable": []
                 },
-                "header": [
-                  {
-                    "key": "X-API-Key",
-                    "value": "{{X-API-Key}}",
-                    "type": "string"
-                  }
-                ],
+                "header": [],
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"collection_mint\": \"9pd6wUcfZpPBsrQFxqEkMjfbyaqraQRsiQtD8D4wqa6W\",\n    \"name\": \"new asset\",\n    \"symbol\": \"NA\",\n    \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\"\n}",
+                  "raw": "{\n    \"api_key\": \"abcdefghijklmno\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -181,38 +113,24 @@
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
-                    "description": "Mint New NFT on Collection",
                     "url": {
-                      "raw": "{{baseUrl}}/v1/{network}/solana/mint/nft",
+                      "raw": "{{baseUrl}}/auth/api-key/destroy",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "v1",
-                        "{network}",
-                        "solana",
-                        "mint",
-                        "nft"
+                        "auth",
+                        "api-key",
+                        "destroy"
                       ],
                       "query": [],
-                      "variable": [
-                        {
-                          "key": "network",
-                          "value": "devnet"
-                        }
-                      ]
+                      "variable": []
                     },
-                    "header": [
-                      {
-                        "key": "X-API-Key",
-                        "value": "{{X-API-Key}}",
-                        "type": "string"
-                      }
-                    ],
+                    "header": [],
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"collection_mint\": \"9pd6wUcfZpPBsrQFxqEkMjfbyaqraQRsiQtD8D4wqa6W\",\n    \"name\": \"new asset\",\n    \"symbol\": \"NA\",\n    \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\"\n}",
+                      "raw": "{\n    \"api_key\": \"abcdefghijklmno\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -220,53 +138,30 @@
                       }
                     }
                   },
-                  "body": "{\n    \"data\": {\n        \"mint_address\": \"FPiveD2LMFwDKPBGdEk6Ty7hf69hYbNHUuNicGUVy8PS\",\n        \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\",\n        \"update_authority\": \"FU1tDd78JKyLqDT6jRUhgLkxdnuYu1Z9nJL2QfwjtWuv\",\n        \"creator_address\": \"9x1sRqFoZTkDtYVKwuVanE7s5LSA2hERZ8FRnU37S2L8\",\n        \"name\": \"new asset\",\n        \"symbol\": \"NA\",\n        \"seller_fee_basis_points\": 200,\n        \"collection\": \"9pd6wUcfZpPBsrQFxqEkMjfbyaqraQRsiQtD8D4wqa6W\",\n        \"signature\": \"2pCTXxDhsr2Vihojv56vkvPSXLE6cosFcwxRffA9QWt5Ay574dhigFCuANuZknjCudkrQp4c7qjX2EhJFHXNLkDw\",\n        \"status\": \"started\"\n    }\n}",
+                  "body": "{\n    \"status\": \"success\"\n}",
                   "_postman_previewlanguage": "json"
                 }
               ],
               "_type": "endpoint"
             },
             {
-              "name": "Mint New Collection",
+              "name": "Get Users Api Keys",
               "request": {
-                "description": "Mint New Top-level Collection",
                 "url": {
-                  "raw": "{{baseUrl}}/v1/{network}/solana/mint/collection",
+                  "raw": "{{baseUrl}}/auth/api-key/list",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "v1",
-                    "{network}",
-                    "solana",
-                    "mint",
-                    "collection"
+                    "auth",
+                    "api-key",
+                    "list"
                   ],
                   "query": [],
-                  "variable": [
-                    {
-                      "key": "network",
-                      "value": "devnet"
-                    }
-                  ]
+                  "variable": []
                 },
-                "header": [
-                  {
-                    "key": "X-API-Key",
-                    "value": "{{X-API-Key}}",
-                    "type": "string"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"new collection\",\n    \"symbol\": \"NC\",\n    \"url\": \"https://arweave.net/pieZ91H8mr7bHGlK_jxNtVyBiLGL0yh9XrQ2oyPR3q8\",\n    \"confirmation\": \"finalized\",\n    \"seller_fee_basis_points\": 200\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
+                "header": [],
+                "method": "GET"
               },
               "response": [
                 {
@@ -274,46 +169,70 @@
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
-                    "description": "Mint New Top-level Collection",
                     "url": {
-                      "raw": "{{baseUrl}}/v1/{network}/solana/mint/collection",
+                      "raw": "{{baseUrl}}/auth/api-key/list",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "v1",
-                        "{network}",
-                        "solana",
-                        "mint",
-                        "collection"
+                        "auth",
+                        "api-key",
+                        "list"
                       ],
                       "query": [],
-                      "variable": [
-                        {
-                          "key": "network",
-                          "value": "devnet"
-                        }
-                      ]
+                      "variable": []
                     },
-                    "header": [
-                      {
-                        "key": "X-API-Key",
-                        "value": "{{X-API-Key}}",
-                        "type": "string"
-                      }
-                    ],
-                    "method": "POST",
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n    \"name\": \"new collection\",\n    \"symbol\": \"NC\",\n    \"url\": \"https://arweave.net/pieZ91H8mr7bHGlK_jxNtVyBiLGL0yh9XrQ2oyPR3q8\",\n    \"confirmation\": \"finalized\",\n    \"seller_fee_basis_points\": 200\n}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    }
+                    "header": [],
+                    "method": "GET"
                   },
-                  "body": "{\n    \"data\": {\n        \"mint_address\": \"FPiveD2LMFwDKPBGdEk6Ty7hf69hYbNHUuNicGUVy8PS\",\n        \"url\": \"https://market-assets.mirrorworld.fun/gen1/1.json\",\n        \"update_authority\": \"FU1tDd78JKyLqDT6jRUhgLkxdnuYu1Z9nJL2QfwjtWuv\",\n        \"creator_address\": \"9x1sRqFoZTkDtYVKwuVanE7s5LSA2hERZ8FRnU37S2L8\",\n        \"name\": \"new asset\",\n        \"symbol\": \"NA\",\n        \"seller_fee_basis_points\": 200,\n        \"signature\": \"2pCTXxDhsr2Vihojv56vkvPSXLE6cosFcwxRffA9QWt5Ay574dhigFCuANuZknjCudkrQp4c7qjX2EhJFHXNLkDw\",\n        \"status\": \"started\"\n    }\n}",
+                  "body": "{\n    \"status\": \"success\",\n    \"api_keys\": [\n        \"abcdefghijklmno\"\n    ]\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Check if Api Key is valid",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/api-key/verify",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "api-key",
+                    "verify"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/api-key/verify",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "api-key",
+                        "verify"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"status\": \"valid\",\n    \"user\": {}\n}",
                   "_postman_previewlanguage": "json"
                 }
               ],
@@ -321,45 +240,31 @@
             }
           ],
           "_type": "container"
-        }
-      ],
-      "_type": "container"
-    },
-    {
-      "name": "Authentication",
-      "item": [
+        },
         {
-          "name": "Transaction Approval",
+          "name": "Auth",
           "item": [
             {
-              "name": "Bind Payment code for user",
+              "name": "Get ethereum authentication challenge",
               "request": {
-                "description": "Binds a new code for a user who previously did not have a payment code",
                 "url": {
-                  "raw": "{{baseUrl}}/v1/auth/security/bind-payment-code",
+                  "raw": "{{baseUrl}}/auth/ethereum/challenge",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "v1",
                     "auth",
-                    "security",
-                    "bind-payment-code"
+                    "ethereum",
+                    "challenge"
                   ],
                   "query": [],
                   "variable": []
                 },
-                "header": [
-                  {
-                    "key": "X-API-Key",
-                    "value": "{{X-API-Key}}",
-                    "type": "string"
-                  }
-                ],
+                "header": [],
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"security_code\": \"123456\",\n    \"confirm_security_code\": \"123456\"\n}",
+                  "raw": "{\n    \"eth_address\": \"0x00000000000000000000000000000\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -373,32 +278,24 @@
                   "status": "OK",
                   "code": 200,
                   "originalRequest": {
-                    "description": "Binds a new code for a user who previously did not have a payment code",
                     "url": {
-                      "raw": "{{baseUrl}}/v1/auth/security/bind-payment-code",
+                      "raw": "{{baseUrl}}/auth/ethereum/challenge",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "v1",
                         "auth",
-                        "security",
-                        "bind-payment-code"
+                        "ethereum",
+                        "challenge"
                       ],
                       "query": [],
                       "variable": []
                     },
-                    "header": [
-                      {
-                        "key": "X-API-Key",
-                        "value": "{{X-API-Key}}",
-                        "type": "string"
-                      }
-                    ],
+                    "header": [],
                     "method": "POST",
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n    \"security_code\": \"123456\",\n    \"confirm_security_code\": \"123456\"\n}",
+                      "raw": "{\n    \"eth_address\": \"0x00000000000000000000000000000\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -406,7 +303,1667 @@
                       }
                     }
                   },
-                  "body": "{\n    \"data\": {\n        \"id\": -65132526,\n        \"eth_address\": \"0x71C7656EC7ab88b098defB751B7401B5f6d8976F\",\n        \"sol_address\": \"HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH\",\n        \"email\": \"dolore consequat\",\n        \"email_verified\": true,\n        \"username\": \"et adipisic\",\n        \"wallet\": {\n            \"eth_address\": \"0x71C7656EC7ab88b098defB751B7401B5f6d8976F\",\n            \"sol_address\": \"HN7cABqLq46Es1jh92dQQisAq662SmxELLLsHHe4YWrH\"\n        },\n        \"createdAt\": \"2022-12-16T07:36:48Z\",\n        \"updatedAt\": \"2022-12-16T07:36:48Z\"\n    }\n}",
+                  "body": "{\n    \"data\": \"Welcome to MirrorWorld ....\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Verifies a signed message and authenticates user",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/ethereum/authorize",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "ethereum",
+                    "authorize"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"eth_address\": \"0x00000000000000000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get metamask authentication challenge (Same as POST /auth/ethereum/challenge)",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/metamask/challenge",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "metamask",
+                    "challenge"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"eth_address\": \"0x00000000000000000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/metamask/challenge",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "metamask",
+                        "challenge"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"eth_address\": \"0x00000000000000000000000000000\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"data\": \"Welcome to MirrorWorld ....\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Verifies a signed message and authenticates user (Same as POS /auth/ethereum/authorize)",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/metamask/authorize",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "metamask",
+                    "authorize"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"eth_address\": \"0x00000000000000000000000000000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get solana authentication challenge",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/solana/challenge",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "solana",
+                    "challenge"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/solana/challenge",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "solana",
+                        "challenge"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"data\": \"Welcome to MirrorWorld ....\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Verifies a signed message and authenticates user",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/solana/authorize",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "solana",
+                    "authorize"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\",\n    \"sol_address_encoded\": \"49YwVjSYHk6yUyKOdmasdf312easEEWeSWZvH2++uaudI=\",\n    \"signature\": \"Pha5IcvJKKX+o4xKZYzpxme3RaZye05dc7pt1x2tu9dzP1wqj23PUdwHhDsjyx2ySry7RPHosyv3PsGp5znhCA==\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get phantom authentication challenge (Same as POST /auth/solana/challenge)",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/phantom/challenge",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "phantom",
+                    "challenge"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/phantom/challenge",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "phantom",
+                        "challenge"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"data\": \"Welcome to MirrorWorld ....\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Verifies a signed message and authenticates user (Same as POST /auth/solana/authorize)",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/phantom/authorize",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "phantom",
+                    "authorize"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\",\n    \"sol_address_encoded\": \"49YwVjSYHk6yUyKOdmasdf312easEEWeSWZvH2++uaudI=\",\n    \"signature\": \"Pha5IcvJKKX+o4xKZYzpxme3RaZye05dc7pt1x2tu9dzP1wqj23PUdwHhDsjyx2ySry7RPHosyv3PsGp5znhCA==\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Checks whether is authenticated or not and returns the user object if true",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/me",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "me"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Developer",
+          "item": [
+            {
+              "name": "Create a developer account for user",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/developer/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "developer",
+                    "create"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"john\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/developer/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "developer",
+                        "create"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"john\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"projects\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"client_id\": \"client_id\",\n                \"client_secret\": \"client_secret\"\n            }\n        ],\n        \"developer\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"user_id\": 1\n        },\n        \"is_new_developer\": true\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Submit developer sign up questionnaire form",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/developer/initialize",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "developer",
+                    "initialize"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email_subscription\": true,\n    \"name\": \"john\",\n    \"telegram\": \"john11\",\n    \"project_name\": \"Crypto project\",\n    \"website\": \"https://crypto.john.com\",\n    \"answers\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/developer/initialize",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "developer",
+                        "initialize"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email_subscription\": true,\n    \"name\": \"john\",\n    \"telegram\": \"john11\",\n    \"project_name\": \"Crypto project\",\n    \"website\": \"https://crypto.john.com\",\n    \"answers\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"submitted\"\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get developer account info for user",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/developer/info",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "developer",
+                    "info"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/developer/info",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "developer",
+                        "info"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"projects\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"client_id\": \"client_id\",\n                \"client_secret\": \"client_secret\"\n            }\n        ],\n        \"developer\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"user_id\": 1\n        },\n        \"is_new_developer\": true\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get developer's api keys",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/developer/list-api-key",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "developer",
+                    "list-api-key"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/developer/list-api-key",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "developer",
+                        "list-api-key"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"api_keys\": [\n            {\n                \"id\": 1,\n                \"project_id\": 1,\n                \"api_key\": \"apikeystring\",\n                \"active\": true,\n                \"valid_to\": \"2023-08-01 14:06:01\",\n                \"project\": {\n                    \"id\": 1,\n                    \"name\": \"john\",\n                    \"avatar\": \"\",\n                    \"client_id\": \"client_id\",\n                    \"client_secret\": \"client_secret\"\n                }\n            }\n        ]\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Discord",
+          "item": [
+            {
+              "name": "Update Discord ID and Discord name",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/v1/auth/upload-discord-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "auth",
+                    "upload-discord-id"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"identity_provider_token\": \"example\",\n    \"redirect_uri\": \"example\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Disconnect Discord ID and Discord name",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/v1/auth/disconnect-discord",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "auth",
+                    "disconnect-discord"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auth/disconnect-discord",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auth",
+                        "disconnect-discord"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST"
+                  },
+                  "body": "{\n    \"message\": \"Success\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get Discord name",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/v1/auth/discord-info",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "auth",
+                    "discord-info"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auth/discord-info",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auth",
+                        "discord-info"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"message\": \"Success\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Email And Password",
+          "item": [
+            {
+              "name": "Requests verification code to bind email to current user's account. (Expires in 10 minutes)",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/email/code",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "email",
+                    "code"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"me@email.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/email/code",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "email",
+                        "code"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\": \"me@email.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"message\": \"Successfully emailed user\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Binds email and password ot account with valid verification code.",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/bind-email-and-password",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "bind-email-and-password"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"me@email.com\",\n    \"password\": \"password\",\n    \"confirm_password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Login by email and password",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"me@email.com\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\": \"me@email.com\",\n    \"password\": \"password\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXRoX2FkZHJlc3MiOiIweDI4ZGE5ZGYyNWI3YzIwMWVjYWUwMTExMDY0M2Y2NmU0MWYwYmU0YTMiLCJpYXQiOjE2NDE1NTY4NTksImV4cCI6NDIzMzU1Njg1OX0.bzhkM4PQOP050yh4gppreZitCHk_eCbJZ8glD0uIHAY\",\n        \"user\": {}\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Eth Sol",
+          "item": [
+            {
+              "name": "Requests two ethereum and solana signatures to bind an existing Ethereum address to a Solana address",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/request-bind-eth-to-sol-address",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "request-bind-eth-to-sol-address"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/request-bind-eth-to-sol-address",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "request-bind-eth-to-sol-address"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"data\": {\n        \"eth_message\": \"Welcome to MirrorWorld!\\n\\n  Click \\\"Sign\\\" to bind your eth_address(0x00000000000000000000000000000) to sol_address(dsf7890rfEWfgdxvnm23qSADFnjq43rdsva).\",\n        \"sol_message\": \"Welcome to MirrorWorld!\\n\\n  Click \\\"Sign\\\" to bind your sol_address(dsf7890rfEWfgdxvnm23qSADFnjq43rdsva) to eth_address(0x00000000000000000000000000000).\"\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Authorizes binding solana address to existing eth_address account",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/bind-eth-to-sol-address",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "bind-eth-to-sol-address"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"eth\": {\n        \"eth_signature\": \"0xabaa7ed4f1f1184902cf849258579022d058d3b011bc0c4314e9dea21259ffde79e61437a1973e8db3cca6dca453c4af266d40e492cdcd369463591574e2b8ec1c\"\n    },\n    \"sol\": {\n        \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\",\n        \"sol_address_encoded\": \"49YwVjSYHk6yUyKOdmasdf312easEEWeSWZvH2++uaudI=\",\n        \"sol_signature\": \"Pha5IcvJKKX+o4xKZYzpxme3RaZye05dc7pt1x2tu9dzP1wqj23PUdwHhDsjyx2ySry7RPHosyv3PsGp5znhCA==\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/bind-eth-to-sol-address",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "bind-eth-to-sol-address"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"eth\": {\n        \"eth_signature\": \"0xabaa7ed4f1f1184902cf849258579022d058d3b011bc0c4314e9dea21259ffde79e61437a1973e8db3cca6dca453c4af266d40e492cdcd369463591574e2b8ec1c\"\n    },\n    \"sol\": {\n        \"sol_address\": \"dsf7890rfEWfgdxvnm23qSADFnjq43rdsva\",\n        \"sol_address_encoded\": \"49YwVjSYHk6yUyKOdmasdf312easEEWeSWZvH2++uaudI=\",\n        \"sol_signature\": \"Pha5IcvJKKX+o4xKZYzpxme3RaZye05dc7pt1x2tu9dzP1wqj23PUdwHhDsjyx2ySry7RPHosyv3PsGp5znhCA==\"\n    }\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Logout",
+          "item": [
+            {
+              "name": "Logs a user out",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/logout",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "logout"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/logout",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "logout"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST"
+                  },
+                  "body": "{\n    \"message\": \"logout successful\",\n    \"loggedOutUser\": {}\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Project",
+          "item": [
+            {
+              "name": "Create a new Project",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "create"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"project A\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "create"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"project A\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"developers\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"user_id\": 1\n            }\n        ],\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"client_id\": \"client_id\",\n            \"client_secret\": \"client_secret\"\n        },\n        \"wallet\": {\n            \"sol_address\": \"6V5WHikf16v8MzN6T1ejTzCg3Q2D95APvL33FLQuqWg8\",\n            \"eth_address\": \"0xB0C72c5023DF0E73d942921204E9c613BF20735D\"\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Update projects name",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/update-name",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "update-name"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"project A\",\n    \"project_id\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/update-name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "update-name"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"project A\",\n    \"project_id\": 1\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"developers\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"user_id\": 1\n            }\n        ],\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"client_id\": \"client_id\",\n            \"client_secret\": \"client_secret\"\n        },\n        \"wallet\": {\n            \"sol_address\": \"6V5WHikf16v8MzN6T1ejTzCg3Q2D95APvL33FLQuqWg8\",\n            \"eth_address\": \"0xB0C72c5023DF0E73d942921204E9c613BF20735D\"\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Delete a Project",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "delete"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"project_id\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/delete",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "delete"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"project_id\": 1\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"developers\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"user_id\": 1\n            }\n        ],\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"client_id\": \"client_id\",\n            \"client_secret\": \"client_secret\"\n        },\n        \"wallet\": {\n            \"sol_address\": \"6V5WHikf16v8MzN6T1ejTzCg3Q2D95APvL33FLQuqWg8\",\n            \"eth_address\": \"0xB0C72c5023DF0E73d942921204E9c613BF20735D\"\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get project's info",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/info/:project_id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "info",
+                    ":project_id"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/info/:project_id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "info",
+                        ":project_id"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"developers\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"user_id\": 1\n            }\n        ],\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"client_id\": \"client_id\",\n            \"client_secret\": \"client_secret\"\n        },\n        \"wallet\": {\n            \"sol_address\": \"6V5WHikf16v8MzN6T1ejTzCg3Q2D95APvL33FLQuqWg8\",\n            \"eth_address\": \"0xB0C72c5023DF0E73d942921204E9c613BF20735D\"\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get project's info",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/logs/:project_id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "logs",
+                    ":project_id"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/logs/:project_id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "logs",
+                        ":project_id"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"page\": 1,\n        \"total_pages\": 10,\n        \"count\": 100,\n        \"data\": {\n            \"id\": 1,\n            \"request_id\": \"9d24221d-f8e4-47bb-84a3-988b10c5b24d\",\n            \"project_id\": 1,\n            \"api_key\": \"someapikey\",\n            \"user_id\": 1,\n            \"user_agent\": \"\",\n            \"method\": \"GET\",\n            \"host\": \"marketplace.mirrorworld.fun\",\n            \"path\": \"/me\",\n            \"status_code\": 200,\n            \"bytes_received\": 0,\n            \"bytes_sent\": 100,\n            \"response_time_ms\": 100\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Get api keys on the project",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/list-api-keys/:project_id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "list-api-keys",
+                    ":project_id"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/list-api-keys/:project_id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "list-api-keys",
+                        ":project_id"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET"
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"api_keys\": [\n            {\n                \"id\": 1,\n                \"project_id\": 1,\n                \"api_key\": \"apikeystring\",\n                \"active\": true,\n                \"valid_to\": \"2023-08-01 14:06:01\",\n                \"project\": {\n                    \"id\": 1,\n                    \"name\": \"john\",\n                    \"avatar\": \"\",\n                    \"client_id\": \"client_id\",\n                    \"client_secret\": \"client_secret\"\n                }\n            }\n        ]\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Add developers to a project",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/add-members",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "add-members"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"project_id\": 1,\n    \"developer_ids\": [\n        1\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/add-members",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "add-members"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"project_id\": 1,\n    \"developer_ids\": [\n        1\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"developers\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"user_id\": 1\n            }\n        ],\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"client_id\": \"client_id\",\n            \"client_secret\": \"client_secret\"\n        },\n        \"wallet\": {\n            \"sol_address\": \"6V5WHikf16v8MzN6T1ejTzCg3Q2D95APvL33FLQuqWg8\",\n            \"eth_address\": \"0xB0C72c5023DF0E73d942921204E9c613BF20735D\"\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "Remove developers from a project",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/project/remove-members",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "project",
+                    "remove-members"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"project_id\": 1,\n    \"developer_ids\": [\n        1\n    ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/project/remove-members",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "project",
+                        "remove-members"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"project_id\": 1,\n    \"developer_ids\": [\n        1\n    ]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"developers\": [\n            {\n                \"id\": 1,\n                \"name\": \"john\",\n                \"avatar\": \"\",\n                \"user_id\": 1\n            }\n        ],\n        \"project\": {\n            \"id\": 1,\n            \"name\": \"john\",\n            \"avatar\": \"\",\n            \"client_id\": \"client_id\",\n            \"client_secret\": \"client_secret\"\n        },\n        \"wallet\": {\n            \"sol_address\": \"6V5WHikf16v8MzN6T1ejTzCg3Q2D95APvL33FLQuqWg8\",\n            \"eth_address\": \"0xB0C72c5023DF0E73d942921204E9c613BF20735D\"\n        }\n    }\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            }
+          ],
+          "_type": "container"
+        },
+        {
+          "name": "Reset Password",
+          "item": [
+            {
+              "name": "reset password send verification code",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/auth/request-password-reset",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "request-password-reset"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"me@email.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/auth/request-password-reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "request-password-reset"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\": \"me@email.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"message\": \"success\"\n}",
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "_type": "endpoint"
+            },
+            {
+              "name": "reset password",
+              "request": {
+                "url": {
+                  "raw": "{{baseUrl}}/v1/auth/verify-password-reset",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "auth",
+                    "verify-password-reset"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"me@email.com\",\n    \"password\": \"helloworld\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [
+                {
+                  "name": "Success",
+                  "status": "OK",
+                  "code": 200,
+                  "originalRequest": {
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/auth/verify-password-reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "auth",
+                        "verify-password-reset"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\": \"me@email.com\",\n    \"password\": \"helloworld\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "body": "{\n    \"message\": \"Success\"\n}",
                   "_postman_previewlanguage": "json"
                 }
               ],
